@@ -95,6 +95,19 @@ export const reducer = (state, action) => {
           }
         })
       }
+
+      if(action.sort_type === 'name_asc'){
+
+        products.sort((a, b) => {
+          
+          if ( String(a.name) > String(b.name) ){
+            return 1;
+          }else{
+            return 0;
+          }
+        })
+      }
+
       console.log({products});
       
      return {
