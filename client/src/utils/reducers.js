@@ -8,7 +8,8 @@ import {
   UPDATE_CATEGORIES,
   UPDATE_CURRENT_CATEGORY,
   CLEAR_CART,
-  TOGGLE_CART
+  TOGGLE_CART,
+  SET_SORT_BY
 } from "./actions";
 
 export const reducer = (state, action) => {
@@ -78,7 +79,29 @@ export const reducer = (state, action) => {
       return {
         ...state,
         currentCategory: action.currentCategory
+      };
+
+    case SET_SORT_BY:
+      const products = [...state.products];
+      console.log(action.sort_type);
+      if(action.sort_type === 'price_asc'){
+
+        products.sort((a, b) => {
+          
+          if ( Number(a.price) > Number(b.price) ){
+            return 1;
+          }else{
+            return 0;
+          }
+        })
       }
+      console.log({products});
+      
+     return {
+        ...state,
+        products: products
+     }  
+
 
     default:
       return state;

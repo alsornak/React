@@ -7,6 +7,7 @@ import {
 } from '../../utils/actions';
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
+import SortItem from '../SortItem/SortItem';
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -54,6 +55,10 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
+    <div>
+      <SortItem />
+    </div>
+
     </div>
   );
 }
