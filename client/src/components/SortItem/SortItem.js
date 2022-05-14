@@ -29,7 +29,7 @@ const options = [
         value: "name_asc"
     },
     {
-        title: "Price By Descending",
+        title: "Name By Descending",
         value: "name_desc"
     }
 ]

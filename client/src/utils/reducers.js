@@ -81,39 +81,63 @@ export const reducer = (state, action) => {
         currentCategory: action.currentCategory
       };
 
-    case SET_SORT_BY:
-      const products = [...state.products];
-      console.log(action.sort_type);
-      if(action.sort_type === 'price_asc'){
-
-        products.sort((a, b) => {
+      case SET_SORT_BY:
+        const products = [...state.products];
+        console.log(action.sort_type);
+        if(action.sort_type === 'price_asc'){
+  
+          products.sort((a, b) => {
+            
+            if ( Number(a.price) > Number(b.price) ){
+              return 1;
+            }else{
+              return -1;
+            }
+          })
+        }
+  
+        if(action.sort_type === 'price_desc'){
+  
+          products.sort((a, b) => {
+            
+            if ( Number(a.price) > Number(b.price) ){
+              return -1;
+            }else{
+              return 1;
+            }
+          })
+        }
+  
+  
+        if(action.sort_type === 'name_asc'){
+  
+          products.sort((a, b) => {
+            
+            if ( String(a.name) > String(b.name) ){
+              return 1;
+            }else{
+              return -1;
+            }
+          })
+        }
+  
+        if(action.sort_type === 'name_desc'){
+  
+          products.sort((a, b) => {
+            
+            if ( String(a.name) > String(b.name) ){
+              return -1;
+            }else{
+              return 1;
+            }
+          })
+        } 
           
-          if ( Number(a.price) > Number(b.price) ){
-            return 1;
-          }else{
-            return 0;
-          }
-        })
-      }
-
-      if(action.sort_type === 'name_asc'){
-
-        products.sort((a, b) => {
-          
-          if ( String(a.name) > String(b.name) ){
-            return 1;
-          }else{
-            return 0;
-          }
-        })
-      }
-
-      console.log({products});
-      
-     return {
-        ...state,
-        products: products
-     }  
+        
+       return {
+          ...state,
+          products: products
+       }  
 
 
     default:
