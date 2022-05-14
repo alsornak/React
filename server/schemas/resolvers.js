@@ -66,11 +66,15 @@ const resolvers = {
           images: [`${url}/images/${products[i].image}`]
         });
 
+        console.log("before strip.prices.create")
+
         const price = await stripe.prices.create({
           product: product.id,
           unit_amount: products[i].price * 100,
           currency: 'usd',
         });
+
+        console.log("after strip.prices.create price: ", price)
 
         line_items.push({
           price: price.id,
