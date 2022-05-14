@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { SET_SORT_BY } from '../../utils/actions';
 import { useStoreContext } from '../../utils/GlobalState';
-
+import './style.css'
 export default function SortItem() {
 
 
@@ -48,7 +48,7 @@ function sort(e){
 
 
     return (
-        <div>
+        <div className='sort'>
             <label htmlFor="price-sort">Sort by:</label>
 
             <select onChange={sort} id="product-sort">

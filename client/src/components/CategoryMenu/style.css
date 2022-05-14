@@ -1,0 +1,20 @@
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    
+  }
+  
+  .flex-item-left1 {  
+    flex: 62%;
+  }
+  
+  .flex-item-right1 {
+    flex: 38%;
+  }
+
+  @media (max-width: 800px) {
+    .flex-item-right1, .flex-item-left1 {
+      flex: 100%;
+    }
+  }

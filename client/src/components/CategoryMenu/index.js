@@ -8,6 +8,7 @@ import {
 import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 import SortItem from '../SortItem/SortItem';
+import './style.css'
 
 function CategoryMenu() {
   const [state, dispatch] = useStoreContext();
@@ -43,7 +44,8 @@ function CategoryMenu() {
   };
 
   return (
-    <div>
+    <div className='menu-container'>
+      <div class="flex-item-left1">
       <h2>Choose a Category:</h2>
       {categories.map((item) => (
         <button
@@ -55,7 +57,8 @@ function CategoryMenu() {
           {item.name}
         </button>
       ))}
-    <div>
+     </div> 
+     <div class="flex-item-right1">
       <SortItem />
     </div>
 
