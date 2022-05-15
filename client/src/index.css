@@ -203,6 +203,11 @@ input:focus {
   color: var(--error);
 }
 
+header.flex-row.px-1 {
+  position: sticky;
+  top: 0;
+}
+
 @media screen and (max-width: 768px) {
   .card {
     width: 100%;
